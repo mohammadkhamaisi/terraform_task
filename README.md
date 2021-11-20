@@ -8,7 +8,7 @@ We'll create a Terraform code that produces the following AWS resources:
 - 2 Instances (t2.micro) - with NGINX running on each
 - An Application Load Balancer that forwards the users’ traffic to the servers
 
-<img width="700" alt="screenshot" src="screenshots/task.png">
+
 
 _______________________________________________
 
@@ -41,7 +41,7 @@ _______________________________________________
   ```
 - #### Create Security Group (SG), to allow inbound web traffic:
 
-  <img width="700" alt="screenshot" src="screenshots/tf-sg.png">
+  
 
 - #### create the instances :
 
@@ -58,7 +58,7 @@ _______________________________________________
       Name = "webserver-${count.index + 1}"
       ```
     
-    <img width="700" alt="screenshot" src="screenshots/tf-instances.png">
+   
     
 - #### create target group & attach instances to target group:
   - target group : (named : tf-example-lb-tg , and in the same default VPC)
@@ -69,13 +69,13 @@ _______________________________________________
 - #### create Application load balancer &  listener :
   - ALB named :"test-lb-tf" 
   
-    <img width="700" alt="screenshot" src="screenshots/tf-lb.png">
+    
   
   - add listener to ALB and set the action to forward to the target group we've created :
   
     (The targets status will change to healthy ,after health check)
     
-    <img width="700" alt="screenshot" src="screenshots/tf-targets.png">
+    
 
 
 _______________________________________________
@@ -104,7 +104,7 @@ _______________________________________________
  
  - #### Go to AWS LoadBalancer & you'll see the created ALB , copy DNS address and paste it on browser , this is what you'll see :
  
-   <img width="700" alt="screenshot" src="screenshots/tf-nginx.png">
+  
 
    
   
